@@ -1,0 +1,5 @@
+.auth-form[hidden]{display:none}
+.account-switch{margin:22px 0 0;color:var(--muted);font-size:12px;text-align:center}
+.text-link{padding:4px;border:0;background:none;color:var(--green);font-size:12px;font-weight:700}
+.text-link:hover{text-decoration:underline}
+.auth-form .password-field{margin-bottom:18px}

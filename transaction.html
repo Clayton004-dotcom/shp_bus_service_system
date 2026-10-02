@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c32">
+  <title>Fare transaction | SHP Bus Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="transaction.js" defer></script>
+</head>
+<body class="portal-page">
+  <header class="topbar">
+    <a class="brand-lockup" href="transaction.html" aria-label="SHP Bus Service home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="brand-name">SHP <span>BUS SERVICE</span></span>
+    </a>
+    <div class="topbar-right"><span class="account-label">Passenger portal</span><button id="logout-button" class="outline-button" type="button">Sign out</button></div>
+  </header>
+  <main class="portal-main">
+    <div class="portal-heading">
+      <div><p class="eyebrow">FARE PORTAL <span class="eyebrow-dot">/</span> SOUTHERN HIGHLANDS</p><h1>Record a fare</h1><p class="form-intro">Enter your trip details to create a fare transaction record.</p></div>
+      <div class="signed-in-card"><span class="avatar" aria-hidden="true">P</span><span><small>Signed in as</small><strong id="passenger-name">Passenger</strong></span></div>
+    </div>
+    <section class="transaction-card" aria-labelledby="transaction-heading">
+      <div class="card-heading"><div><span class="step-label">NEW TRANSACTION</span><h2 id="transaction-heading">Fare transaction details</h2></div><span class="status-pill"><span></span> Ready</span></div>
+      <p class="card-description">Transaction ID and timestamp are generated automatically when the fare is saved.</p>
+      <form id="transaction-form" class="transaction-form" novalidate>
+        <div class="field-group"><label for="pcard-id">Payment Card ID <span class="required-mark">*</span></label><input id="pcard-id" name="pcard_id" type="text" placeholder="e.g. PC-10482" autocomplete="off" maxlength="64" required><small>Use the card identifier only. Do not enter a full card number or PIN.</small></div>
+        <div class="field-group"><label for="bus-id">Bus ID <span class="required-mark">*</span></label><input id="bus-id" name="bus_id" type="text" placeholder="e.g. BUS-021" autocomplete="off" maxlength="64" required></div>
+        <div class="field-group fare-field"><label for="fare-amount">Fare amount <span class="required-mark">*</span></label><div class="currency-input"><span>K</span><input id="fare-amount" name="fare_amount" type="number" min="0.01" max="10000" step="0.01" placeholder="0.00" required></div><small>Amount in PGK (PNG Kina).</small></div>
+        <div class="record-preview"><span class="preview-icon" aria-hidden="true">↗</span><span><strong>Automatic record details</strong><small>Transaction ID · Date and time of payment</small></span><span class="auto-tag">AUTO</span></div>
+        <p id="transaction-message" class="form-message" role="alert" aria-live="polite"></p>
+        <button class="primary-button" type="submit"><span>Save fare transaction</span><span aria-hidden="true">→</span></button>
+      </form>
+      <section id="receipt" class="receipt" hidden aria-live="polite">
+        <div class="receipt-top"><span class="success-mark" aria-hidden="true">✓</span><div><p class="eyebrow">TRANSACTION SAVED</p><h3>Fare record created</h3></div></div>
+        <dl id="receipt-details" class="receipt-details"></dl>
+        <button id="new-transaction" class="outline-button" type="button">Record another fare</button>
+      </section>
+      <p class="payment-disclaimer">This page records fare transactions; it does not process or authorize a card payment.</p>
+    </section>
+    <footer class="portal-footer">Southern Highlands Province Bus Service <span>·</span> Passenger fare records</footer>
+  </main>
+</body>
+</html>

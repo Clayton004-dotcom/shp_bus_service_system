@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c32">
+  <title>Passenger sign in | SHP Bus Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="signup.css">
+  <script src="login.js" defer></script>
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="brand-panel" aria-labelledby="brand-title">
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-name">SHP <span>BUS SERVICE</span></span>
+      </div>
+      <div class="brand-copy">
+        <p class="eyebrow">SOUTHERN HIGHLANDS PROVINCE</p>
+        <h1 id="brand-title">Your journey,<br>made simpler.</h1>
+        <p>Sign in to manage your passenger account and record your bus fare.</p>
+      </div>
+      <div class="route-note"><span class="route-line" aria-hidden="true"></span><span>Connecting our communities</span></div>
+      <div class="decorative-sun" aria-hidden="true"></div>
+    </section>
+    <section class="form-panel" aria-labelledby="login-title">
+      <div class="form-wrap">
+        <div class="mobile-brand brand-lockup">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="brand-name">SHP <span>BUS SERVICE</span></span>
+        </div>
+        <p class="eyebrow form-eyebrow">PASSENGER PORTAL</p>
+        <h2 id="login-title">Sign in to your account</h2>
+        <p class="form-intro" id="form-intro">Use your passenger ID and password to continue.</p>
+        <form id="login-form" class="stacked-form auth-form" novalidate>
+          <label for="passenger-id">Passenger ID</label>
+          <input id="passenger-id" name="passenger_id" type="text" autocomplete="username" placeholder="Enter your passenger ID" required maxlength="64">
+          <label for="password">Password</label>
+          <div class="password-field">
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required maxlength="128">
+            <button class="text-button" id="toggle-password" type="button" aria-label="Show password">Show</button>
+          </div>
+          <p id="login-message" class="form-message" role="alert" aria-live="polite"></p>
+          <button class="primary-button" type="submit"><span>Continue to fare portal</span><span aria-hidden="true">→</span></button>
+        </form>
+        <form id="signup-form" class="stacked-form auth-form" hidden novalidate>
+          <label for="signup-passenger-id">Passenger ID</label>
+          <input id="signup-passenger-id" name="passenger_id" type="text" autocomplete="username" placeholder="Choose a passenger ID" required maxlength="64">
+          <label for="signup-password">Password</label>
+          <div class="password-field">
+            <input id="signup-password" name="password" type="password" autocomplete="new-password" placeholder="Create a password (8-72 characters)" required minlength="8" maxlength="72">
+          </div>
+          <label for="confirm-password">Confirm password</label>
+          <div class="password-field">
+            <input id="confirm-password" name="confirm_password" type="password" autocomplete="new-password" placeholder="Enter your password again" required minlength="8" maxlength="72">
+          </div>
+          <p id="signup-message" class="form-message" role="alert" aria-live="polite"></p>
+          <button class="primary-button" type="submit"><span>Create passenger account</span><span aria-hidden="true">→</span></button>
+        </form>
+        <p class="account-switch" id="account-switch">
+          <span id="switch-prompt">New to SHP?</span>
+          <button class="text-link" id="switch-form" type="button">Create an account</button>
+        </p>
+        <p class="secure-note"><span aria-hidden="true">●</span> Your account is protected by secure sign-in.</p>
+        <p class="help-note" id="help-note">Need help accessing your account? Contact your bus service administrator.</p>
+      </div>
+      <footer class="page-footer">© <span id="year">2026</span> Southern Highlands Province Bus Service</footer>
+    </section>
+  </main>
+</body>
+</html>
